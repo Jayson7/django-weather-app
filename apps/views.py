@@ -19,10 +19,11 @@ def homepage(request):
             "humidity": str(list_data['main']['humidity'] ),
             "description": str(list_data['weather'][0]['description'] ),
             "icon":str(list_data['weather'][0]['icon']) ,
+            "name":str(list_data["name"] )
 
 
         }
-        print(data)
+        print(data['name'])
     else:
         data = {}
     return render(request, 'index.html', data )
